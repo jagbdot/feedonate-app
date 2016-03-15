@@ -2,69 +2,26 @@
 
 <h1>Feedonate</h1>
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="sign-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Albumes</h4>
+        <h4 class="modal-title" id="myModalLabel">Regístrate o inicia sesión</h4>
       </div>
       <div class="modal-body">
-      <!-- interpola el singup -->
-      <form class="new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="1/+yL4kg+ZckkBbJc6KN2zNeLSLejt/P1TOnelHuAu5bYyvou2mJzfA+UMnv2rAz31buF+p64NehZkXz3pdprQ==">
-
-        <div class="field"> 
-          <label for="user_name">Name</label><br> 
-          <input autofocus="autofocus" type="text" name="user[name]" id="user_name">
+        <div class='col-md-6 col-sm-6'>
+          <!-- append sign_up/sign_in -->
         </div>
-
-        <div class="field"> 
-          <label for="user_city">City</label><br> 
-          <input autofocus="autofocus" type="text" name="user[city]" id="user_city">
-        </div>
-
-        <div class="field"> 
-          <label for="user_address">Address</label><br> 
-          <input autofocus="autofocus" type="text" name="user[address]" id="user_address">
-        </div>
-
-        <div class="field"> 
-          <label for="user_phone">Phone</label><br> 
-          <input autofocus="autofocus" type="text" name="user[phone]" id="user_phone">
-        </div>
-
-        <div class="field">
-          <label for="user_email">Email</label><br>
-          <input autofocus="autofocus" type="email" value="" name="user[email]" id="user_email">
-        </div>
-
-        <div class="field">
-          <label for="user_password">Password</label>
-          <em>(8 characters minimum)</em>
-          <br>
-          <input autocomplete="off" type="password" name="user[password]" id="user_password">
-        </div>
-
-        <div class="field">
-          <label for="user_password_confirmation">Password confirmation</label><br>
-          <input autocomplete="off" type="password" name="user[password_confirmation]" id="user_password_confirmation">
-        </div>
-
-        <div class="actions">
-          <input type="submit" name="commit" value="Sign up">
-        </div>
-      </form>
-      <!-- fin -->
       </div>
     </div>
   </div>
 </div>
 
 <% if user_signed_in? %>
-  <h1>Hello <%= current_user.name %>
+  <h1>Hello <%= current_user.name %>!</h1>
 <% else %>
-  <a id="singup" data-toggle="modal" data-target="#myModal" href="#" class='btn btn-success'>Regístrate</a>
+  <a data-toggle="modal" data-target="#sign-modal" href="#" class='signup btn btn-success'>Regístrate</a>
+  <a data-toggle="modal" data-target="#sign-modal" href="#" class='signin btn btn-success'>Inicia sesión</a>
 <% end %>
-
-
 </div>

@@ -1,8 +1,16 @@
 class UsersController < ApplicationController
-before_action :authenticate_user! #todas las acciones de controlador de usuario solo son accesibles para 
+before_action :authenticate_user!, :except => [:get_form_sign_in, :get_form_sign_up] #todas las acciones de controlador de usuario solo son accesibles para 
   # GET /users
   def index
     @users = User.all
+  end
+
+  def get_form_sign_in
+    render 'form-signin'
+  end
+
+  def get_form_sign_up
+    render 'form-signup'
   end
 
   # GET /users/1

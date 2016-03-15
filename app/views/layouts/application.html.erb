@@ -17,8 +17,8 @@
     <a href='/profile'><%= current_user.name %></a>
     <%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %>
   <% else %>
-    <%= link_to 'Sign_up', new_user_registration_path %>
-    <%= link_to 'Sign_in', new_user_session_path %>
+    <a class="signup" data-toggle="modal" data-target="#sign-modal" href="#">Regístrate</a>
+    <a class="signin" data-toggle="modal" data-target="#sign-modal" href="#">Inicia sesión</a>
   <% end %>
   </div>
 </nav>
