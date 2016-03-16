@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
 
   def is_a_bank?
-    self.food_bank == "bank"
+    self.bank == "bank"
   end
 
   def is_a_donor?
