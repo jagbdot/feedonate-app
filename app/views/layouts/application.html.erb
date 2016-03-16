@@ -11,20 +11,27 @@
 </head>
 <body>
 
-<nav class="top_navbar">
+<nav class="top_navbar aligner">
   <div class='container'>
-  <% if user_signed_in? %>
-    <a href='/profile'><%= current_user.name %></a>
-    <%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %>
-  <% else %>
-    <a class="signup" data-toggle="modal" data-target="#sign-modal" href="#">Regístrate</a>
-    <a class="signin" data-toggle="modal" data-target="#sign-modal" href="#">Inicia sesión</a>
-  <% end %>
-  <% flash.each do |message_type, message| %>
-       <div id="flash" class="flash-<%= message_type %>">
-         <%= message %>
-       </div>
-  <% end %>
+    <div class='logo-section col-md-4 col-sm-4 aligner-item'>
+      <h1 class='logo'>Feedonate</h1>
+    </div>
+    <div class='nav-section col-md-4 col-sm-4 aligner-item'>
+    </div>
+    <div class='user-section col-md-4 col-sm-4 aligner-item'>
+    <% if user_signed_in? %>
+      <a href='/profile'><%= current_user.name %></a>
+      <%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %>
+    <% else %>
+      <a class="signup" data-toggle="modal" data-target="#sign-modal" href="#">Regístrate</a>
+      <a class="signin" data-toggle="modal" data-target="#sign-modal" href="#">Inicia sesión</a>
+    <% end %>
+    <% flash.each do |message_type, message| %>
+         <div id="flash" class="flash-<%= message_type %>">
+           <%= message %>
+         </div>
+    <% end %>
+    </div>
   </div>
 </nav>
 

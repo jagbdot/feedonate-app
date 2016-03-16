@@ -1,11 +1,35 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
 
 .top_navbar{
-  height: auto;
-  background-color: red;
+  background-color: $color-grey;
   width: 100%;
+  height: 55px;
+  a{
+    color: #fff;
+    padding: 0 15px;
+    font-size: $font-size-links;
+  }
+}
+
+.logo-section{
+  height: auto;
+}
+
+.aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aligner-item {
+  max-width: 50%;
+}
+
+.user-section{
+  text-align: right;
 }
 
 #sign-modal{
