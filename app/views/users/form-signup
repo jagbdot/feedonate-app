@@ -26,17 +26,12 @@
   </div>
 
   <div class="field">
-    <label>Escoge una opción</label><br>
-    <select>
-      <option value="true" name="user[donor]" >Quiero ser un donante</option>
-      <option value="true" name="user[food_bank]" >Quiero recibir una donación</option>
+    <label for="user_type_of_user">Escoge una opción</label><br>
+    <select name="user[type_of_user]">
+      <option value="donor">Quiero hacer una donación</option>
+      <option value="bank">Quiero solicitar una donación</option>
     </select>
   </div>
-
-  <select name="user[donor]" id="user_donor">
-    <option value="true">donante</option>
-    <option value="false">banco</option>
-  </select>
 
   <div class="field">
     <label for="user_password">Password</label>

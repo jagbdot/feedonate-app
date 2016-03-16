@@ -39,7 +39,6 @@ before_action :authenticate_user!, :except => [:get_form_sign_in, :get_form_sign
 
     respond_to do |format|
       if @user.save
-        flash[:notice] = "Cuenta creada!"
         format.html { redirect_to @user, notice: 'User was successfully created.' }
       else
         format.html { render :new, notice: 'There was something wrong...' }
@@ -72,6 +71,6 @@ before_action :authenticate_user!, :except => [:get_form_sign_in, :get_form_sign
   
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :city, :phone, :address, :donor, :food_bank)
+      params.require(:user).permit(:name, :email, :city, :phone, :address, :type_of_user)
     end
 end

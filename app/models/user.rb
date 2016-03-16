@@ -4,12 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  def is_a_bank?
-    self.bank == "bank"
-  end
-
   def is_a_donor?
-    self.donor == "donor"
+    self.type_of_user == "donor"
   end
 
 end
