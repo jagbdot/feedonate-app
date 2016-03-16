@@ -1,22 +1,22 @@
 <form class="new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="1/+yL4kg+ZckkBbJc6KN2zNeLSLejt/P1TOnelHuAu5bYyvou2mJzfA+UMnv2rAz31buF+p64NehZkXz3pdprQ==">
 
   <div class="field"> 
-    <label for="user_name">Name</label><br> 
+    <label for="user_name">Nombre</label><br> 
     <input autofocus="autofocus" type="text" name="user[name]" id="user_name">
   </div>
 
   <div class="field"> 
-    <label for="user_city">City</label><br> 
+    <label for="user_city">Ciudad</label><br> 
     <input autofocus="autofocus" type="text" name="user[city]" id="user_city">
   </div>
 
   <div class="field"> 
-    <label for="user_address">Address</label><br> 
+    <label for="user_address">Dirección</label><br> 
     <input autofocus="autofocus" type="text" name="user[address]" id="user_address">
   </div>
 
   <div class="field"> 
-    <label for="user_phone">Phone</label><br> 
+    <label for="user_phone">Móvil o Teléfono</label><br> 
     <input autofocus="autofocus" type="text" name="user[phone]" id="user_phone">
   </div>
 
@@ -24,6 +24,19 @@
     <label for="user_email">Email</label><br>
     <input autofocus="autofocus" type="email" value="" name="user[email]" id="user_email">
   </div>
+
+  <div class="field">
+    <label>Escoge una opción</label><br>
+    <select>
+      <option value="true" name="user[donor]" >Quiero ser un donante</option>
+      <option value="true" name="user[food_bank]" >Quiero recibir una donación</option>
+    </select>
+  </div>
+
+  <select name="user[donor]" id="user_donor">
+    <option value="true">donante</option>
+    <option value="false">banco</option>
+  </select>
 
   <div class="field">
     <label for="user_password">Password</label>

@@ -20,6 +20,11 @@
     <a class="signup" data-toggle="modal" data-target="#sign-modal" href="#">Regístrate</a>
     <a class="signin" data-toggle="modal" data-target="#sign-modal" href="#">Inicia sesión</a>
   <% end %>
+  <% flash.each do |message_type, message| %>
+       <div id="flash" class="flash-<%= message_type %>">
+         <%= message %>
+       </div>
+  <% end %>
   </div>
 </nav>
 

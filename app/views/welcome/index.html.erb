@@ -19,7 +19,13 @@
 </div>
 
 <% if user_signed_in? %>
-  <h1>Hello <%= current_user.name %>!</h1>
+  <% if current_user.is_a_bank? %>
+    <a class=''>Buscar canastas</a>
+  <% elsif current_user.is_a_donor? %>
+    <a class=''>Hacer una donación</a>
+  <% else %>
+    <a>Regístrate</a>
+  <% end %>
 <% else %>
   <a data-toggle="modal" data-target="#sign-modal" href="#" class='signup btn btn-success'>Regístrate</a>
   <a data-toggle="modal" data-target="#sign-modal" href="#" class='signin btn btn-success'>Inicia sesión</a>
