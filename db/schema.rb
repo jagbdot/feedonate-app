@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160317121139) do
+ActiveRecord::Schema.define(version: 20160317131345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,18 @@ ActiveRecord::Schema.define(version: 20160317121139) do
   end
 
   add_index "donations", ["user_id"], name: "index_donations_on_user_id", using: :btree
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.string   "type"
+    t.integer  "amount"
+    t.datetime "date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "donation_id"
+  end
+
+  add_index "products", ["donation_id"], name: "index_products_on_donation_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -45,4 +57,5 @@ ActiveRecord::Schema.define(version: 20160317121139) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "donations", "users"
+  add_foreign_key "products", "donations"
 end
