@@ -9,7 +9,6 @@
 .container{
   width: 1085px !important;
 }
-
 }
 
 
@@ -89,7 +88,8 @@ a{
 
 footer{
   background-color: $color-grey;
-  height: 200px;
+  padding: 20px 0; 
+  height: auto;
   color: #fff;
   p{
     font-size: 14px;

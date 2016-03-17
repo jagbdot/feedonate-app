@@ -1,123 +1,23 @@
 <section class='aligner background'>
-<div class='container'>
-  <div class='index-welcome aligner-item'>
-    <div class='image-logo'>
-      <img src="<%= asset_path('prueba-logo.png') %>">
-    </div>
-    <h1 class='first-title'>Feedonate</h1>
-    <hr class='separator'></hr>
-  </div>
-  <div class="modal fade" id="sign-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Regístrate o inicia sesión</h4>
-        </div>
-        <div class="modal-body">
-          <div class='col-md-6 col-sm-6'>
-            <!-- append sign_up/sign_in -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class='container'>
 
-  <% if user_signed_in? %>
-    <% if current_user.is_a_donor? %>
-      <a href='#' class='btn-do'>Donar</a>
-    <% else %>
-      <a href='#' class='btn-do'>Buscar canastas</a>
-    <% end %>
-  <% else %>
-  <div class='link-group'>
-    <a data-toggle="modal" data-target="#sign-modal" href="#" class='signup btn-do group'>Regístrate</a>
-    <a data-toggle="modal" data-target="#sign-modal" href="#" class='signin btn-do group'>Inicia sesión</a>
+  <%= render :partial => 'welcome/static/presentation' %>
+
+  <%= render :partial => 'welcome/static/login_modal' %>
+
+  <%= render :partial => 'welcome/static/option_buttons' %>
+
   </div>
-  <% end %>
-</div>
 </section>
 
 <div class='container'>
-  <h2 class='center'>Cómo funciona</h2>
-  <div class='row'>
-    <div class='col-md-4 col-sm-4 col-xs-12 margin-helper'>
-      <div class='icon-box'>
-      </div>
-      <h3>Registrate como donante o como banco de alimentos<h3>
-      <p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people.</p>
-    </div>
-    <div class='col-md-4 col-sm-4 col-xs-12 margin-helper'>
-      <div class='icon-box'>
-      </div>
-      <h3>Haz una donación formal o busca la necesaria<h3>
-      <p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people.</p>
-    </div>
-    <div class='col-md-4 col-sm-4 col-xs-12 margin-helper'>
-      <div class='icon-box'>
-      </div>
-      <h3>Haz visible tu negocio y frena el desperdicio de alimentos<h3>
-      <p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people.</p>
-    </div>
-  </div>
 
-  <h2 class='center'>Donaciones recientes</h2>
-  <div class='row'>
-    <div class='col-md-4 col-sm-4 col-xs-12'>
-      <div class='donor-box'>
-      </div>
-    </div>
-    <div class='col-md-4 col-sm-4 col-xs-12'>
-      <div class='donor-box'>
-      </div>
-    </div>
-    <div class='col-md-4 col-sm-4 col-xs-12'>
-      <div class='donor-box'>
-      </div>
-    </div>
-  </div>
-  <hr class='separator'></hr>
-  <a href='#' class='btn-do margin-helper'>Ver todas</a>
+  <%= render :partial => 'welcome/static/how_it_works' %>
 
-  <h2 class='center'>Bancos de alimento</h2>
-  <div class='row'>
-    <div class='col-md-8 col-sm-8 col-xs-12'>
-      <div class='map-box'>
-      </div>
-    </div>
-    <div class='col-md-4 col-sm-4 col-xs-12'>
-      <div class=''>
-        <h3>¡50 bancos en España!</h3>
-        <p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, because you're here shopping for an infant named Jeb.</p>
-      </div>
-    </div>
-  </div>
-  <hr class='separator'></hr>
-  <a href='#' class='btn-do margin-helper'>Ver todos</a>
+  <%= render :partial => 'welcome/dynamic/donations' %>
 
-  <h2 class='center'>Ranking de donantes</h2>
-  <div class='row'>
-    <div class='col-md-4 col-sm-4 col-xs-12'>
-      <div class=''>
-        <h3>Nuestros donantes más generosos</h3>
-        <p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, because you're here shopping for an infant named Jeb.</p>
-      </div>
-    </div>
-    <div class='col-md-8 col-sm-8 col-xs-12'>
-      <div class='map-box margin-helper divided'>
-      </div>
-      <div class="row">
-        <div class='col-md-6 col-sm-6 col-xs-12'>
-          <div class='donor-box'>
-          </div>
-        </div>
-        <div class='col-md-6 col-sm-6 col-xs-12'>
-          <div class='donor-box'>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <hr class='separator'></hr>
-  <a href='#' class='btn-do margin-helper'>Ver ranking</a>
+  <%= render :partial => 'welcome/dynamic/food_banks' %>
+
+  <%= render :partial => 'welcome/dynamic/ranking_donors' %>
+
 </div>

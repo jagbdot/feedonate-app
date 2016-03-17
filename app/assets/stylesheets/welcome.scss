@@ -122,7 +122,19 @@ hr.separator{
   height: 350px;
   margin: 0 auto;
   background-color: $color-grey; 
+  overflow: hidden;
+  iframe{
+    width: 100% !important;
+    border: 0px;
+    height: 350px;
+    overflow: hidden; 
+  }
+  .i4ewOd-pzNkMb-haAclf{ 
+      display: none !important;
+      left: 5px !important;
+  }
 }
+
 
 .margin-helper{
   margin-bottom: 60px;
