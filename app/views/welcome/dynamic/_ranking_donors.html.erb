@@ -6,20 +6,29 @@
       <p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, because you're here shopping for an infant named Jeb.</p>
     </div>
   </div>
+
   <div class='col-md-8 col-sm-8 col-xs-12'>
     <div class='map-box margin-helper divided'>
+      <h3><%= @winner_user.name %></h3>
+      <p>Donaciones: <%=  @winner_user.donations.length %></p>
+      <p>Productos: <%= @winner_user.get_user_products %></p>
+      <p>Porcentaje: <%= @winner_user.donations.length * 100 / Donation.all.length %>%</p>
     </div>
-    <div class="row">
-      <div class='col-md-6 col-sm-6 col-xs-12'>
-        <div class='donor-box'>
-        </div>
-      </div>
-      <div class='col-md-6 col-sm-6 col-xs-12'>
-        <div class='donor-box'>
-        </div>
+  <div class="row">
+    <% @last_winner_users.each do |winner| %>
+    <div class='col-md-6 col-sm-6 col-xs-12'>
+      <div class='donor-box margin-helper divided'>
+        <h3><%= winner.name %></h3>
+        <p>Donaciones: <%=  winner.donations.length %></p>
+        <p>Productos: <%= winner.get_user_products %></p>
+        <p>Porcentaje: <%= winner.donations.length * 100 / Donation.all.length %>%</p>
       </div>
     </div>
+  <% end %>
+  </div>
   </div>
 </div>
+
+
 <hr class='separator'></hr>
 <a href='#' class='btn-do margin-helper'>Ver ranking</a>

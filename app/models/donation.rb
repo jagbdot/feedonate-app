@@ -5,4 +5,8 @@ class Donation < ActiveRecord::Base
   def self.last_created_donations(n)
     Donation.order(id = 1).limit(n) 
   end
+
+  def self.get_winner_donation
+    Donation.first
+  end
 end
