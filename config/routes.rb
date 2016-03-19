@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   #DONATE
   get 'donor/donate', to: 'donations#new'
   post 'donor/donate', to: 'donations#create'
+
+  get 'donor/donate/products', to: 'products#new'
+  post 'donor/donate/products', to: 'products#create'
 end

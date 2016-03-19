@@ -7,12 +7,10 @@ class DonationsController < ApplicationController
   def create
     @user = current_user
     @donation = @user.donations.new(donation_params)
-    @product = @donation.products.new(product_params)
 
     if @donation.save
-      @product.save
-      flash[:notice] = "donation created successfully"
-      redirect_to action: 'index', controller: 'welcome' 
+      flash[:notice] = "Now you have to add the products."
+      redirect_to action: 'new', controller: 'products' 
     else
       flash[:alert] = "You need to fill the camps"
       render 'new'

@@ -8,39 +8,15 @@
 
 <form class="new_donation" id="new_donation" action="/donor/donate" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="6bHg9h10h5Vigv7hquw4fDgojW6ybzjhtcmivoW1sJP/gRb4FEBZN+jx5cmGaK0HC0olegFZhgVO775OMhx4dw==">
 <div class="row">
-<div class="col-md-6">
-  <h2>Rellena los datos de la donación</h2>
-  <label for="donation_description">Descripción</label>
-  <input type="text" name="donation[description]" id="donation_description">
-  <br>
-  <label for="donation_date">Fecha de expiración</label>
-  <input type="date" name="donation[date]" id="donation_date">
-  <br>
-</div>
-<div class="col-md-6">
-  <h2>Agrega un producto</h2>
-    <label for="donation_product_name">Nombre</label> 
-    <input type="text" name="product[name]" id="donation_product_name">
+  <div class="col-md-6">
+    <h2>Rellena los datos de la donación</h2>
+    <label for="donation_description">Descripción</label>
+    <input type="text" name="donation[description]" id="donation_description">
     <br>
-    <label for="donation_product_amount">Cantidad</label> 
-    <input type="text" name="product[amount]" id="donation_product_amount">
+    <label for="donation_date">Fecha de expiración</label>
+    <input type="date" name="donation[date]" id="donation_date">
     <br>
-    <div class="field">
-      <label for="donation_product_category">Tipo de alimento</label><br>
-      <select name="product[category]">
-        <option value="verduras">Verdura</option>
-        <option value="fruta">Fruta</option>
-        <option value="carne">Carne</option>
-        <option value="pescado">Pescado</option>
-        <option value="cereal">Cereal</option>
-        <option value="legumbre">Legumbre</option>
-        <option value="menteca o aceite">Manteca o aceite</option>
-        <option value="bebida">Bebida</option>
-        <option value="leche o derivados">Leche o derivados</option>
-        <option value="otro">Otro</option>
-      </select>
-    </div>
-</div>
+  </div>
 </div>
 
   <input type="submit" name="commit" value="Save">
