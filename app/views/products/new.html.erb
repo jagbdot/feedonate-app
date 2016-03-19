@@ -1,6 +1,14 @@
 <div class='container'>
-<hr>
-<hr>
+
 <%= render 'form' %>
+
+<ul>
+<% @donation_products.each do |product| %>
+  <li>
+    <%= product.name %><br>
+    <strong>category: </strong><%= product.category %><br>
+  </li>
+<% end %>
+</ul>
 
 </div>

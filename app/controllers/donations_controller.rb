@@ -9,7 +9,7 @@ class DonationsController < ApplicationController
     @donation = @user.donations.new(donation_params)
 
     if @donation.save
-      flash[:notice] = "Now you have to add the products."
+      flash[:notice] = "Well done! Now you have to add the products."
       redirect_to action: 'new', controller: 'products' 
     else
       flash[:alert] = "You need to fill the camps"
