@@ -24,6 +24,6 @@ class DonationsController < ApplicationController
     params.require(:donation).permit(:date, :description)
   end
   def product_params
-    params.require(:product).permit(:type, :name, :amount, :date)
+    params.require(:product).permit(:category, :name, :amount, :date)
   end
 end

@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <% if current_user.is_a_donor? %>
-    <a href='#' class='btn-do'>Donar</a>
+    <a href='/donor/donate' class='btn-do'>Donar</a>
   <% else %>
     <a href='#' class='btn-do'>Buscar canastas</a>
   <% end %>
