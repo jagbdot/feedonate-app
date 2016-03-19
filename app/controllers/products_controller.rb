@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
     @donation_products = @donation.products.all
   end
   def create
+    binding.pry
     @user = current_user
     @donation = @user.donations.last #needs review
     @product = @donation.products.new(product_params)
