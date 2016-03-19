@@ -10,9 +10,9 @@
   <div class='col-md-8 col-sm-8 col-xs-12'>
     <div class='map-box margin-helper divided'>
       <h3><%= @winner_user.name %></h3>
-      <p>Donaciones: <%=  @winner_user.donations.length %></p>
-      <p>Productos: <%= @winner_user.get_user_products %></p>
-      <p>Porcentaje: <%= @winner_user.donations.length * 100 / Donation.all.length %>%</p>
+      <p><%=  @winner_user_donations %> donaciones</p>
+      <p><%= @winner_user_products %> productos</p>
+      <p><%= @winner_user_donations_porcentage %>% del total de las donaciones</p>
     </div>
   <div class="row">
     <% @last_winner_users.each do |winner| %>
