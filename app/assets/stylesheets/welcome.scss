@@ -43,6 +43,13 @@ h1.logo{
   display: inline-block;
 }
 
+h1.single-page{
+  font-size: 38px;
+  font-weight: 100;
+  margin-bottom: 30px;
+  margin-top: 80px;
+}
+
 h2{
   font-size: 34px !important;
   font-weight: 100 !important;
@@ -86,6 +93,10 @@ h3{
   }
 }
 
+.index-link{
+  padding: 0 !important;
+}
+
 .image-logo{
   width: 160px;
   margin: 0 auto;
@@ -100,6 +111,9 @@ hr.separator{
   border-width: 4px;
   margin: 35px auto;
   border-color: $color-grey-dark;
+  &.minor{
+    margin: 5px auto 35px;
+  }
 }
 
 .icon-box{
@@ -116,6 +130,51 @@ hr.separator{
   margin: 0 auto;
   background-color: $color-grey; 
   color: #fff;
+  position: relative;
+  padding: 20px;
+  .bottom{
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+  }
+  .btn-do{
+    padding: 6px 20px;
+    color: #fff;
+    font-weight: 100;
+    border-color: #fff;
+    font-size: 14px;
+    text-align: center;
+    &:hover{
+      background-color: #fff;
+      color: $color-grey-dark;
+    }
+  }
+
+  h6{
+    margin: 0;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    font-weight: 100;
+  }
+  h3{
+    font-size: 28px !important;
+    font-weight: 700 !important;
+    padding-bottom: 15px;
+    width: auto;
+    display: inline-block;
+    border-bottom: 3px solid #fff;
+  }
+  h5{
+    margin: 0;
+    font-weight: 500;
+    padding-bottom: 20px;
+    span{
+      background-color: $color-grey-dark; 
+      padding: 0px 12px 3px;
+      margin-left: 6px;
+    }
+  }
 }
 
 .map-box{

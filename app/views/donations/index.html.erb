@@ -1,18 +1,16 @@
 <div class='container'>
-  <hr></hr>
-  <hr></hr>
-  <h1>Donations</h1>
-
+  <h1 class='single-page'>Donations</h1>
 <div class='row '>
   <div id='donations'>
     <%= render @donations %>
   </div>
 </div>
 
+<hr class='separator minor'></hr>
 <div class="load-more-container">
         <!-- hide our loading gif image so that we show it when making ajax call via jquery -->
   <%= image_tag "ajax-loader.gif", style: "display:none;", class: "loading-gif" %>
-  <%= link_to "Load More", donations_path, class: "load-more" %>
+  <%= link_to "Load More", donations_path, class: "btn-do load-more margin-helper" %>
 </div>
 
 </div>

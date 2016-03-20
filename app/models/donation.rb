@@ -4,7 +4,7 @@ class Donation < ActiveRecord::Base
   has_many :products
 
   def self.last_created_donations(n)
-    Donation.order(id = 1).last(n) 
+    Donation.order(id = 1).first(n) 
   end
 
   def self.get_winner_donation

@@ -7,7 +7,7 @@ class DonationsController < ApplicationController
       # and limit the results to 5
       @donations = Donation.where('id < ?', params[:id]).limit(6)
     else
-      @donations = Donation.limit(6)
+      @donations = Donation.limit(9)
     end
     respond_to do |format|
       format.html

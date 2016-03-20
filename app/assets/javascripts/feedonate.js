@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+  $( '.i4ewOd-pzNkMb-haAclf' ).remove();
   $('.signup').click(function(event) {
     $.get("/users-form-signup", function(data){
         $('.modal-body').empty();
