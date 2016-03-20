@@ -5,6 +5,7 @@
         <div class='donor-box'>
           <% if donation.description.present? %>
               <p><%= "- #{donation.description}" %></p>
+              <p><%= "- #{donation.user.name}" %></p>
           <% end %>
         </div>
       </div>
