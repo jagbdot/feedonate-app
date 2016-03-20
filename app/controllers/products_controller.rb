@@ -5,18 +5,19 @@ class ProductsController < ApplicationController
     @donation_products = @donation.products.all
   end
   def create
-    binding.pry
     @user = current_user
     @donation = @user.donations.last #needs review
-    @product = @donation.products.new(product_params)
+    @product = @donation.products.create(product_params)
 
-    if @product.save
-      flash[:notice] = "Donation created succesfully."
-      redirect_to action: 'index', controller: 'welcome' 
-    else
-      flash[:alert] = "You need to fill the camps"
-      render 'new'
-    end
+      respond_to do |format|
+        # if the response fomat is html, redirect as usual
+        format.html { 
+          flash[:notice] = "something not quite well"
+          redirect_to action: 'index', controller: 'welcome'  
+        }
+        # if the response format is javascript, do something in app/views/products/create.js.erb
+        format.js { }
+      end
   end
 
   private

@@ -26,7 +26,9 @@ $( document ).ready(function() {
     $.ajax({
       method: method,
       url: action,
-      data: data
+      data: data,
+      // this line makes the response format JavaScript and not html.
+      dataType: 'script'
     });
 
   });

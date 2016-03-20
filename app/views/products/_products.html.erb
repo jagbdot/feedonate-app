@@ -1,0 +1,7 @@
+<ol class='products-list'>
+<% @donation_products.each do |product| %>
+  <li>
+    <%= product.category %>: <%= product.name %>(<%= product.amount %>) 
+  </li>
+<% end %>
+</ol>
