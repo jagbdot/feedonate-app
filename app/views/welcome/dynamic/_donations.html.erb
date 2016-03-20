@@ -4,12 +4,12 @@
       <div class='col-md-4 col-sm-4 col-xs-12'>
         <div class='donor-box'>
           <% if donation.description.present? %>
+              <h3><%= "- #{donation.user.name}" %></h3>
               <p><%= "- #{donation.description}" %></p>
-              <p><%= "- #{donation.user.name}" %></p>
           <% end %>
         </div>
       </div>
   <% end %>
 </div>
 <hr class='separator'></hr>
-<a href='#' class='btn-do margin-helper'>Ver todas</a>
+<a href='/donations' class='btn-do margin-helper'>Ver todas</a>

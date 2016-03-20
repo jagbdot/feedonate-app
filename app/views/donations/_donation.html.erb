@@ -1,0 +1,8 @@
+<div class='col-md-4 col-sm-4 col-xs-12'>
+  <div class='donor-box margin-helper' data-id="<%= donation.id %>">
+    <% if donation.description.present? %>
+        <h3><%= "- #{donation.user.name}" %></h3>
+        <p><%= "- #{donation.description}" %></p>
+    <% end %>
+  </div>
+</div>

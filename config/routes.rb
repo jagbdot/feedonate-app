@@ -16,4 +16,7 @@ Rails.application.routes.draw do
 
   get 'donor/donate/products', to: 'products#new'
   post 'donor/donate/products', to: 'products#create'
+
+  #DONATION LIST
+  get '/donations', to: 'donations#index'
 end

@@ -1,4 +1,19 @@
 class DonationsController < ApplicationController
+  
+  def index
+    # if the id params is present
+    if params[:id]
+      # get all records with id less than 'our last id'
+      # and limit the results to 5
+      @donations = Donation.where('id < ?', params[:id]).limit(6)
+    else
+      @donations = Donation.limit(6)
+    end
+    respond_to do |format|
+      format.html
+      format.js { }
+    end 
+  end
 
   def new
     @user = current_user
