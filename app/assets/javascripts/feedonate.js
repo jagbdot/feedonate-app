@@ -14,6 +14,7 @@ $( document ).ready(function() {
 
   $('#new_product').submit(function(){
     event.preventDefault()
+
     // Setting the route and the post method
     var method = $(this).attr('method'); // POST
     var action = $(this).attr('action'); // /donor/donate/products
@@ -30,6 +31,8 @@ $( document ).ready(function() {
       // this line makes the response format JavaScript and not html.
       dataType: 'script'
     });
+
+    $('#donation_product_name, #donation_product_amount').val('');
 
   });
 })
