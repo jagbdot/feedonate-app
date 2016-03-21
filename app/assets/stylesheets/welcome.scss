@@ -150,6 +150,13 @@ hr.separator{
       color: $color-grey-dark;
     }
   }
+  .donor-logo-container{
+    height: 60px;
+    width: 60px;
+    background-color: $color-grey-dark;
+    float: right;
+    display: inline-block;
+  }
 
   h6{
     margin: 0;
