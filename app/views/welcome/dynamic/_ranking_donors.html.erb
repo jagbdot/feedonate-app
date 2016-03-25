@@ -1,28 +1,67 @@
 <h2 class='center'>Ranking de donantes</h2>
 <div class='row'>
-  <div class='col-md-4 col-sm-4 col-xs-12'>
-    <div class=''>
-      <h3>Nuestros donantes más generosos</h3>
-      <p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, because you're here shopping for an infant named Jeb.</p>
-    </div>
-  </div>
-
-  <div class='col-md-8 col-sm-8 col-xs-12'>
-    <div class='map-box margin-helper divided'>
-      <h3><%= @winner_user.name %></h3>
-      <p><%=  @winner_user_donations %> donaciones</p>
-      <p><%= @winner_user_products %> productos</p>
-      <p><%= @winner_user_donations_porcentage %>% del total de las donaciones</p>
+  <div class='col-md-12 col-sm-12 col-xs-12'>
+    <div class='frame-for-circle'>
+      <div class='m-circle'>
+        <span class='glyphicon glyphicon-king'></span>
+      </div>
+      <div class='ranking-major-box'>
+        <div class='head-box'>
+          <h6>Nº 1</h6>
+          <h3><%= @winner_user.name %></h3>
+        </div>
+        <div class='col-md-3 col-md-offset-2'>
+          <div class='s-circle'>
+            <p><%=  @winner_user_donations %></p>
+          </div>
+          <p>Donaciones</p>
+        </div>
+        <div class='col-md-2'>
+          <div class='s-circle'>
+            <p><%= @winner_user_products %></p>
+          </div>
+          <p>Productos</p>
+        </div>
+        <div class='col-md-3'>
+          <div class='s-circle'>
+            <p><%= @winner_user_donations_porcentage %>% </p>
+          </div>
+          <p>Porcentaje</p>
+        </div>
+      </div>
     </div>
   <div class="row">
     <% @last_winner_users.each do |winner| %>
     <div class='col-md-6 col-sm-6 col-xs-12'>
-      <div class='donor-box margin-helper divided'>
-        <h3><%= winner.name %></h3>
-        <p>Donaciones: <%=  winner.donations.length %></p>
-        <p>Productos: <%= winner.get_user_products %></p>
-        <p>Porcentaje: <%= winner.donations.length * 100 / Donation.all.length %>%</p>
+    <div class='frame-for-circle with-minor-circle'>
+      <div class='m-circle minor'>
+        <span class='glyphicon glyphicon-star'></span>
       </div>
+      <div class='ranking-major-box second-places'>
+        <div class='head-box'>
+          <h6>Nº 2</h6>
+          <h3><%= winner.name %></h3>
+        </div>
+        <div class='col-md-4'>
+          <div class='s-circle'>
+            <p><%= winner.donations.length %></p>
+          </div>
+          <p>donaciones</p>
+        </div>
+        <div class='col-md-4'>
+          <div class='s-circle'>
+            <p><%= winner.get_user_products %></p>
+          </div>
+          <p>Productos</p>
+        </div>
+        <div class='col-md-4'>
+          <div class='s-circle'>
+            <p><%= winner.donations.length * 100 / Donation.all.length %>%</p>
+          </div>
+          <p>Porcentaje</p>
+        </div>
+      </div>
+    </div>
     </div>
   <% end %>
   </div>

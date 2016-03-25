@@ -22,6 +22,10 @@ class User < ActiveRecord::Base
     self.get_user_products * 100 / Product.all
   end
 
+  def get_banks
+    User.where(type_of_user: 'bank')
+  end
+
   def self.get_user_by_number
     User.all[-3..1]
   end

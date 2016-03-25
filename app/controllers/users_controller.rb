@@ -5,6 +5,10 @@ before_action :authenticate_user!, :except => [:get_form_sign_in, :get_form_sign
     @users = User.all
   end
 
+  def banks
+    @banks = User.where(type_of_user: 'bank')
+  end
+
   def get_form_sign_in
     render 'form-signin'
   end

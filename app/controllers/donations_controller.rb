@@ -31,6 +31,9 @@ class DonationsController < ApplicationController
       render 'new'
     end
   end
+  def show
+    @donation = Donation.find(params[:id]) || render_404(params) 
+  end
 
   private
   def donation_params

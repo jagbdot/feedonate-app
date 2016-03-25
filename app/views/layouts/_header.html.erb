@@ -1,0 +1,30 @@
+<nav class="top_navbar aligner">
+  <div class='container'>
+    <div class='row'>
+      <div class='logo-section col-md-2 col-sm-2 aligner-item'>
+        <a class='index-link' href="/">
+        <img src="<%= asset_path('logo-feedonate-b.png') %>">
+        <h1 class='logo'>Feedonate</h1>
+        </a>
+      </div>
+      <div class='nav-section col-md-7 col-sm-7 aligner-item'>
+        <nav>
+          <ul class='menu'>
+            <li><a href="#">Canastas</a></li>
+            <li><a href="#">Bancos de alimento</a></li>          
+            <li><a href="#">Donantes</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class='user-section col-md-4 col-sm-4 aligner-item'>
+      <% if user_signed_in? %>
+        <a href='/profile'><%= current_user.name %></a>
+        <%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %>
+      <% else %>
+        <a class="signup" data-toggle="modal" data-target="#sign-modal" href="#">Regístrate</a>
+        <a class="signin" data-toggle="modal" data-target="#sign-modal" href="#">Inicia sesión</a>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</nav>

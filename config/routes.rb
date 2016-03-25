@@ -19,4 +19,10 @@ Rails.application.routes.draw do
 
   #DONATION LIST
   get '/donations', to: 'donations#index'
+
+  #FIND DONATION
+  get '/donations/:id', to: 'donations#show'
+
+  #BANKS LIST
+  get '/banks', to: 'users#banks'
 end

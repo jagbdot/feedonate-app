@@ -6,20 +6,21 @@
 </ul>
 <% end %>
 
-<form class="new_donation" id="new_donation" action="/donor/donate" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="6bHg9h10h5Vigv7hquw4fDgojW6ybzjhtcmivoW1sJP/gRb4FEBZN+jx5cmGaK0HC0olegFZhgVO775OMhx4dw==">
 <div class="row">
-  <div class="col-md-6">
-    <h2>Rellena los datos de la donación</h2>
-    <label for="donation_description">Descripción</label>
-    <input type="text" name="donation[description]" id="donation_description">
-    <br>
-    <label for="donation_date">Fecha de expiración</label>
-    <input type="date" name="donation[date]" id="donation_date">
-    <br>
+  <div class="col-md-6 col-md-offset-3">
+    <form class="new_donation" id="new_donation" action="/donor/donate" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="6bHg9h10h5Vigv7hquw4fDgojW6ybzjhtcmivoW1sJP/gRb4FEBZN+jx5cmGaK0HC0olegFZhgVO775OMhx4dw==">
+        <h2 class='title-form'>Rellena los datos de la donación</h2>
+        <p>* Danos una descripción breve sobre los objetivos de la donación y otros factors que condicionen superficialmente su propósito.</p>
+        <label for="donation_description">Descripción</label>
+        <textarea type="text" name="donation[description]" id="donation_description">
+        </textarea>
+        <br>
+        <label for="donation_date">Fecha de expiración</label>
+        <input type="date" name="donation[date]" id="donation_date">
+        <br>
+      <input class='btn-do' type="submit" name="commit" value="Enviar">
+    </form>
   </div>
 </div>
-
-  <input type="submit" name="commit" value="Save">
-</form>
 
 

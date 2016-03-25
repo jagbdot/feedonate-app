@@ -12,11 +12,13 @@
 
 
 #flash{
-  position: absolute;
+  position: relative;
   width: 100%;
-  background-color: $color-grey-dark;
+  background-color: rgba(70,180,140, 0.6);
   top: 55px;
-  padding: 10px 0;
+  display: block !important;
+  z-index: 2;
+  padding: 12px 0 15px;
   color: #fff;
   margin-left: auto;
   margin-right: auto;
@@ -26,7 +28,7 @@
 }
 
 .top_navbar{
-  background-color: $color-grey;
+  background-color: $blue-security;
   position: fixed;
   z-index: 10;
   width: 100%;
@@ -86,12 +88,50 @@ a{
 }
 
 footer{
-  background-color: $color-grey;
+  background-color: $blue-security;
   padding: 20px 0; 
   height: auto;
   color: #fff;
+  .redes{
+    span{
+      font-size: 36px;
+      margin-right: 20px;
+    }
+  }
+  .glyphicon{
+    display: inline-block !important;
+    margin-right: 5px;
+  }
+  h4{
+    margin-bottom: 20px;
+  }
+  ol{
+    li{
+      padding: 5px 0;
+      a{
+        color: #fff;
+        text-decoration: underline;
+      }
+    }
+  }
   p{
     font-size: 14px;
+    line-height: 22px !important;
     line-height: 19px;   
   }
+}
+
+// banks
+ul.elements{
+  padding: 0;
+  margin: 30px 0;
+  li{
+      list-style: none;
+      font-size: 18px;
+      width: 100%;
+      background-color: #fff;
+      padding: 20px;
+      border-bottom: 1px solid rgba(106, 155, 195, 0.8);
+      box-shadow: 2px 2px rgba(106, 155, 195, 0.8);
+    }
 }

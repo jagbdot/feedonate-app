@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+  $('.products-list').empty();
   $( '.i4ewOd-pzNkMb-haAclf' ).remove();
   $('.signup').click(function(event) {
     $.get("/users-form-signup", function(data){
@@ -34,7 +35,6 @@ $( document ).ready(function() {
     });
 
     $('#donation_product_name, #donation_product_amount').val('');
-
   });
 
   // load more

@@ -1,0 +1,109 @@
+@font-face {
+    font-family: 'icomoon';
+    src:    url('fonts/icomoon.eot?azn8vn');
+    src:    url('fonts/icomoon.eot?azn8vn#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?azn8vn') format('truetype'),
+        url('fonts/icomoon.woff?azn8vn') format('woff'),
+        url('fonts/icomoon.svg?azn8vn#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-users:before {
+    content: "\e90b";
+}
+.icon-stats-bars:before {
+    content: "\e90c";
+}
+.icon-trophy:before {
+    content: "\e901";
+}
+.icon-clipboard:before {
+    content: "\e90d";
+}
+.icon-list-numbered:before {
+    content: "\e900";
+}
+.icon-bookmark:before {
+    content: "\e902";
+}
+.icon-facebook:before {
+    content: "\e90e";
+}
+.icon-twitter:before {
+    content: "\e90f";
+}
+.icon-vimeo:before {
+    content: "\e910";
+}
+
+.icon-1:before{
+    content: '\e90d';
+    font-family: 'icomoon';
+    speak: none;
+    color: #000;
+}
+
+.icon-2:before{
+    content: '\e900';
+    font-family: 'icomoon';
+    speak: none;
+}
+
+.icon-3:before{
+    content: '\e90c';
+    font-family: 'icomoon';
+    speak: none;
+}
+
+.icon-4:before{
+    content: '\e90b';
+    font-family: 'icomoon';
+    speak: none;
+}
+
+.icon-5:before{
+    content: '\e902';
+    font-family: 'icomoon';
+    speak: none;
+}
+
+.icon-6:before{
+    content: '\e901';
+    font-family: 'icomoon';
+    speak: none;
+}
+
+.icon-7:before{
+    content: '\e90e';
+    font-family: 'icomoon';
+    speak: none;
+}
+
+.icon-8:before{
+    content: '\e90f';
+    font-family: 'icomoon';
+    speak: none;
+}
+
+.icon-9:before{
+    content: '\e910';
+    font-family: 'icomoon';
+    speak: none;
+}
+

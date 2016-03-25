@@ -1,70 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>FeedonateApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-</head>
+
+<%= render :partial => 'layouts/head' %>
+
 <body>
 
-<nav class="top_navbar aligner">
-  <div class='container'>
-    <div class='row'>
-      <div class='logo-section col-md-2 col-sm-2 aligner-item'>
-        <a class='index-link' href="/">
-        <img src="<%= asset_path('prueba-logo-b.png') %>">
-        <h1 class='logo'>Feedonate</h1>
-        </a>
-      </div>
-      <div class='nav-section col-md-7 col-sm-7 aligner-item'>
-        <nav>
-          <ul class='menu'>
-            <li><a href="#">Canastas</a></li>
-            <li><a href="#">Bancos de alimento</a></li>          
-            <li><a href="#">Donantes</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class='user-section col-md-4 col-sm-4 aligner-item'>
-      <% if user_signed_in? %>
-        <a href='/profile'><%= current_user.name %></a>
-        <%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %>
-      <% else %>
-        <a class="signup" data-toggle="modal" data-target="#sign-modal" href="#">Regístrate</a>
-        <a class="signin" data-toggle="modal" data-target="#sign-modal" href="#">Inicia sesión</a>
-      <% end %>
-      </div>
-    </div>
-  </div>
-</nav>
-<% flash.each do |message_type, message| %>
-     <div id="flash" class="flash-<%= message_type %>">
-       <%= message %>
-     </div>
-<% end %>
+<%= render :partial => 'layouts/header' %>
+
+<%= render :partial => 'layouts/flash_messages' %>
+
 <%= yield %>
 
-<footer>
-  <div class='container'>
-    <div class='row'>
-      <div class='col-md-4'>
-        <h4 class='logo'>Links</h4>
-        <p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, because you're here shopping for an infant named Jeb.</p>
-      </div>
-      <div class='col-md-4'>
-        <h4 class='logo'>Links</h4>
-        <p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, because you're here shopping for an infant named Jeb.</p> 
-      </div>
-      <div class='col-md-4'>
-        <h4 class='logo'>Links</h4>
-        <p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, because you're here shopping for an infant named Jeb.</p> 
-      </div>
-    </div>
-  </div>
-</footer>
+<%= render :partial => 'layouts/footer' %>
+
 </body>
 </html>
