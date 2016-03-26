@@ -1,1 +1,30 @@
-<h1>yeah donation id!</h1>
+<div class='container'>
+  <div class='margin-for-nav'>
+    <div class="row">
+      <div class='col-md-4'>
+        <h1><%= @donation.description %></h1>
+        <h3><%= @donation.date %></h3>
+      </div>
+      <div class='col-md-8'>
+        <% if @products.any? %>
+          <ol>
+          <% @products.each do |product| %>
+            <li><%= product.name %> - (<%= product.amount %>)</li>
+          <% end %>
+          </ol>
+        <% end %>
+        <% if user_signed_in? %>
+          <% if current_user.is_a_donor? %>
+          <% else %>
+            <a action="/donations/<%= @donation.id %>" value="<%= current_user.id %>" method="post" class='btn-do donation-request'>Solicitar donación</a>
+          <% end %>
+        <% else %>
+        <div class='link-group'>
+          <a data-toggle="modal" data-target="#sign-modal" href="#" class='signup btn-do group'>Regístrate</a>
+        </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -2,17 +2,47 @@ $( document ).ready(function() {
   $('.products-list').empty();
   $( '.i4ewOd-pzNkMb-haAclf' ).remove();
   $('.signup').click(function(event) {
+    event.preventDefault()
     $.get("/users-form-signup", function(data){
         $('.modal-body').empty();
         $(".modal-body").html(data)
     });
   })
   $('.signin').click(function(event) {
+    event.preventDefault()
     $.get("/users-form-signin", function(data){
         $('.modal-body').empty();
         $(".modal-body").html(data)
     });
   })
+  $('.show-donation').click(function(event) {
+    event.preventDefault()
+    $.get("/donations-donation", function(data){
+        $('.modal-body').empty();
+        $(".modal-body").html(data)
+    });
+  })
+
+  $('.donation_request').submit(function(event){
+    event.preventDefault()
+
+    // Setting the route and the post method
+    var method = $(this).attr('method'); // POST
+    var action = $(this).attr('action'); // /donor/donate/products
+    var data = $(event.currentTarget).attr("value")
+    
+    $.ajax({
+      method: method,
+      url: action,
+      data: data,
+      // this line makes the response format JavaScript and not html.
+      dataType: 'script',
+
+      success: function () {
+          alert("yeah!")
+      }
+    });
+  });
 
   $('#new_product').submit(function(){
     event.preventDefault()

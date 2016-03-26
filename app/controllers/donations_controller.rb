@@ -33,6 +33,7 @@ class DonationsController < ApplicationController
   end
   def show
     @donation = Donation.find(params[:id]) || render_404(params) 
+    @products = @donation.products
   end
 
   private
