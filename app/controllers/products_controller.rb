@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   end
   def create
     @user = current_user
-    @donation = @user.donations.last #needs review
+    @donation = @user.donor_donations.first #needs review
     @product = @donation.products.create(product_params)
 
       respond_to do |format|

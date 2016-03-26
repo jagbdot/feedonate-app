@@ -1,9 +1,14 @@
 class User < ActiveRecord::Base
-  has_many :donations
+  has_many :bank_donations, class_name: "Donation", foreign_key: "bank_id"
+  has_many :donor_donations, class_name: "Donation", foreign_key: "donor_id"
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def donations
+    Donation.where("bank_id = ? OR donor_id = ?", self.id, self.id)
+  end
 
   def is_a_donor?
     self.type_of_user == "donor"

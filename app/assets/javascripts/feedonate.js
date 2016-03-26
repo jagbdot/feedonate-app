@@ -23,7 +23,7 @@ $( document ).ready(function() {
     });
   })
 
-  $('.donation_request').submit(function(event){
+  $('.donation-request').click(function(event){
     event.preventDefault()
 
     // Setting the route and the post method

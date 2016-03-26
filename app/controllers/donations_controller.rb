@@ -17,11 +17,11 @@ class DonationsController < ApplicationController
 
   def new
     @user = current_user
-    @donation = @user.donations.new
+    @donation = @user.donor_donations.new
   end
   def create
     @user = current_user
-    @donation = @user.donations.new(donation_params)
+    @donation = @user.donor_donations.new(donation_params)
 
     if @donation.save
       flash[:notice] = "Well done! Now you have to add the products."
