@@ -25,4 +25,7 @@ Rails.application.routes.draw do
 
   #BANKS LIST
   get '/banks', to: 'users#banks'
+
+  #BANK REQUEST
+  post '/donations/:id', to: 'donations#update'
 end

@@ -30,10 +30,24 @@ class DonationsController < ApplicationController
       flash[:alert] = "You need to fill the camps"
       render 'new'
     end
+
   end
   def show
     @donation = Donation.find(params[:id]) || render_404(params) 
     @products = @donation.products
+  end
+
+  def update
+    @donation = Donation.find(params[:id]) || render_404(params) 
+    @user = current_user.id
+    @donation.update_attributes({ :bank_id => @user })
+
+      respond_to do |format|
+        format.js { }
+        format.html { redirect_to root_path, notice: 'no fucker' }
+   
+    end
+
   end
 
   private

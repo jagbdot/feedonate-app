@@ -23,27 +23,6 @@ $( document ).ready(function() {
     });
   })
 
-  $('.donation-request').click(function(event){
-    event.preventDefault()
-
-    // Setting the route and the post method
-    var method = $(this).attr('method'); // POST
-    var action = $(this).attr('action'); // /donor/donate/products
-    var data = $(event.currentTarget).attr("value")
-    
-    $.ajax({
-      method: method,
-      url: action,
-      data: data,
-      // this line makes the response format JavaScript and not html.
-      dataType: 'script',
-
-      success: function () {
-          alert("yeah!")
-      }
-    });
-  });
-
   $('#new_product').submit(function(){
     event.preventDefault()
 
@@ -103,5 +82,28 @@ $( document ).ready(function() {
             }
         });
       });
+
+    $('#new_request').submit(function(event){
+      event.preventDefault()
+
+      // Setting the route and the post method
+      var method = $(this).attr('method'); 
+      var action = $(this).attr('action'); 
+      var data = $(this).serialize();
+      
+      var bank_id = $(this).find('#_donations_bank_id').val();
+      
+      $.ajax({
+        method: method,
+        url: action,
+        data: data,
+        // this line makes the response format JavaScript and not html.
+        dataType: 'script',
+
+        success: function () {
+            alert("good?!")
+        }
+      });
+    });
 });
 

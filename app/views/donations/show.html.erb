@@ -7,6 +7,7 @@
       </div>
       <div class='col-md-8'>
         <% if @products.any? %>
+        <form id="new_request" action="/donations/<%= @donation.id %>" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="6bHg9h10h5Vigv7hquw4fDgojW6ybzjhtcmivoW1sJP/gRb4FEBZN+jx5cmGaK0HC0olegFZhgVO775OMhx4dw==">
           <ol>
           <% @products.each do |product| %>
             <li><%= product.name %> - (<%= product.amount %>)</li>
@@ -16,7 +17,11 @@
         <% if user_signed_in? %>
           <% if current_user.is_a_donor? %>
           <% else %>
-            <a action="/donations/<%= @donation.id %>" value="<%= current_user.id %>" method="post" class='btn-do donation-request'>Solicitar donación</a>
+          <label for="_donation_bank_id">bankid</label>
+          <input type="text" name="donations[bank_id]" value="<%= current_user.id %>" id="_donations_bank_id"></input>
+          <input class='btn-do donation-request' type="submit" name="commit" value="Solicitar donación">
+          </form>
+
           <% end %>
         <% else %>
         <div class='link-group'>
@@ -24,7 +29,6 @@
         </div>
         <% end %>
       </div>
-
     </div>
   </div>
 </div>
