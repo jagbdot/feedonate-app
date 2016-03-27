@@ -35,6 +35,7 @@ class DonationsController < ApplicationController
   def show
     @donation = Donation.find(params[:id]) || render_404(params) 
     @products = @donation.products
+    @donation_bank_id = @donation.bank_id
   end
 
   def update
@@ -44,8 +45,7 @@ class DonationsController < ApplicationController
 
       respond_to do |format|
         format.js { }
-        format.html { redirect_to root_path, notice: 'no fucker' }
-   
+        format.html { redirect_to root_path, notice: 'no' }
     end
 
   end

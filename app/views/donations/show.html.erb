@@ -17,11 +17,13 @@
         <% if user_signed_in? %>
           <% if current_user.is_a_donor? %>
           <% else %>
-          <label for="_donation_bank_id">bankid</label>
-          <input type="text" name="donations[bank_id]" value="<%= current_user.id %>" id="_donations_bank_id"></input>
+            <% if current_user.id == @donation.bank_id %>
+            <a href="">Donación solicitada</a>
+            <% else %>
+          <input type="hidden" name="donations[bank_id]" value="<%= current_user.id %>" id="_donations_bank_id"></input>
           <input class='btn-do donation-request' type="submit" name="commit" value="Solicitar donación">
           </form>
-
+            <% end %>
           <% end %>
         <% else %>
         <div class='link-group'>
