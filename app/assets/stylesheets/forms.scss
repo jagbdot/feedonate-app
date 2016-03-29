@@ -40,10 +40,15 @@ form{
     }
   }
 
+  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+      color: rgba(106, 155, 195, 0.5);
+  }
+
   label{
     margin: 0px 0 10px;
   }
   ol{
+    padding-left: 20px;
     li{
       font-size: 16px;
       border-bottom: 1px solid rgba(106, 155, 195, 0.8);

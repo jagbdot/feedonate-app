@@ -1,0 +1,26 @@
+<div class='head-image'>
+  <div class='overlay'></div>
+    <h1 class='single-page'>Donantes</h1>
+    <h2 class='single-page'>Aquí encontrarás a los donantes registrados.</h2>
+  <img src='http://i.huffpost.com/gen/734700/images/o-FOOD-BANKS-CAMPUS-FOOD-CHARTER-facebook.jpg'>
+</div>
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-6'>
+      <ul class='elements'>
+      <% @donors.each do |donor| %>
+        <li><%= donor.name %></li>
+      <% end %>
+      </ul>
+    </div>
+    <div class='col-md-6'>
+    </div>
+  </div>
+
+<hr class='separator minor'></hr>
+  <div class="load-more-container">
+
+    <%= image_tag "ajax-loader.gif", style: "display:none;", class: "loading-gif" %>
+    <%= link_to "Load More", donations_path, class: "btn-do load-more margin-helper" %>
+  </div>
+</div>

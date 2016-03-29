@@ -1,4 +1,9 @@
 $( document ).ready(function() {
+
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+  
   $('.products-list').empty();
   $( '.i4ewOd-pzNkMb-haAclf' ).remove();
   $('.signup').click(function(event) {
@@ -101,7 +106,7 @@ $( document ).ready(function() {
         dataType: 'script',
 
         success: function () {
-            alert("good?!")
+            
         }
       });
     });

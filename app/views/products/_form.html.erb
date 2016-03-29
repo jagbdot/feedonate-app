@@ -1,24 +1,26 @@
 <form class="new_product" id="new_product" action="/donor/donate/products" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="6bHg9h10h5Vigv7hquw4fDgojW6ybzjhtcmivoW1sJP/gRb4FEBZN+jx5cmGaK0HC0olegFZhgVO775OMhx4dw==">
-  <h2>Agrega un producto</h2>
+  <h2>Agrega un alimento</h2>
+    <p class='margin-notification'>* Para una mejor legibilidad, escribe el nombre del alimento con el primer carácter en mayúscula.</p>
     <label for="donation_product_name">Nombre</label> 
-    <input type="text" name="product[name]" id="donation_product_name">
+    <input type="text" name="product[name]" placeholder="Agrega el nombre del alimento" id="donation_product_name">
     <br>
     <label for="donation_product_amount">Cantidad</label> 
-    <input type="text" name="product[amount]" id="donation_product_amount">
+    <input type="text" name="product[amount]" placeholder="Agrega su cantidad en unidades" id="donation_product_amount">
     <br>
     <div class="field">
       <label for="donation_product_category">Tipo de alimento</label><br>
       <select name="product[category]" id="donation_product_category">
-        <option value="Verduras">Verdura</option>
-        <option value="Fruta">Fruta</option>
+        <option value="Bebida">Bebida</option>
         <option value="Carne">Carne</option>
-        <option value="Pescado">Pescado</option>
         <option value="Cereal">Cereal</option>
+        <option value="Fruta">Fruta</option>
+        <option value="Leche o derivados">Leche o derivados</option>
         <option value="Legumbre">Legumbre</option>
         <option value="Menteca o aceite">Manteca o aceite</option>
-        <option value="Bebida">Bebida</option>
-        <option value="Leche o derivados">Leche o derivados</option>
         <option value="Otro">Otro</option>
+        <option value="Pescado">Pasta</option>
+        <option value="Pescado">Pescado</option>
+        <option value="Verduras">Verdura</option>
       </select>
     </div>
     <input class='btn-do' type="submit" name="commit" value="Agregar">

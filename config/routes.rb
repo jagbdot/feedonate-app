@@ -26,6 +26,14 @@ Rails.application.routes.draw do
   #BANKS LIST
   get '/banks', to: 'users#banks'
 
+  #RANKING LIST
+  get '/donors', to: 'users#donors'
+
   #BANK REQUEST
   post '/donations/:id', to: 'donations#update'
+
+  put '/donations/:donation_id', to: 'donations#update', as: 'donors_put'
+
+  #DESTROY REQUEST
+  delete '/donations/:id', to: 'donations#destroy'
 end

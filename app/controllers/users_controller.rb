@@ -1,12 +1,23 @@
 class UsersController < ApplicationController
 before_action :authenticate_user!, :except => [:get_form_sign_in, :get_form_sign_up] #todas las acciones de controlador de usuario solo son accesibles para 
   # GET /users
+
+  def number_donations
+    if user_signed_in?
+      @notifications = current_user.get_notifications_number
+    end
+  end
+
   def index
     @users = User.all
   end
 
   def banks
     @banks = User.where(type_of_user: 'bank')
+  end
+
+  def donors
+    @donors = User.where(type_of_user: 'donor')
   end
 
   def get_form_sign_in
@@ -24,6 +35,8 @@ before_action :authenticate_user!, :except => [:get_form_sign_in, :get_form_sign
 
   def profile
     @user = current_user
+    @donor_donation = @user.donor_donations
+    @bank_donation = @user.bank_donations
     render 'users/profile'
   end
 
@@ -43,9 +56,9 @@ before_action :authenticate_user!, :except => [:get_form_sign_in, :get_form_sign
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to @user, notice: 'Usuario creado exitosamente.' }
       else
-        format.html { render :new, notice: 'There was something wrong...' }
+        format.html { render :new, notice: 'Algo fue mal...' }
       end
     end
   end
@@ -55,7 +68,7 @@ before_action :authenticate_user!, :except => [:get_form_sign_in, :get_form_sign
     @user = User.find(params[:id])
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user, notice: 'Usuario editado exitosamente.' }
       else
         format.html { render :edit }
       end
@@ -67,7 +80,7 @@ before_action :authenticate_user!, :except => [:get_form_sign_in, :get_form_sign
     @user = User.find(params[:id])
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to users_url, notice: 'Usuario eliminado exitosamente.' }
     end
   end
 

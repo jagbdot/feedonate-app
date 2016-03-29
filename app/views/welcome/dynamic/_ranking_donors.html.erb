@@ -12,21 +12,21 @@
         </div>
         <div class='col-md-3 col-md-offset-2'>
           <div class='s-circle'>
-            <p><%=  @winner_user_donations %></p>
+            <p><span class='glyphicon glyphicon-heart'></span></p>
           </div>
-          <p>Donaciones</p>
+          <p><%=  @winner_user_donations %> Donaciones</p>
         </div>
         <div class='col-md-2'>
           <div class='s-circle'>
-            <p><%= @winner_user_products %></p>
+            <p><span class='glyphicon glyphicon-ok'></span></p>
           </div>
-          <p>Productos</p>
+          <p><%= @winner_user_products %> Productos</p>
         </div>
         <div class='col-md-3'>
           <div class='s-circle'>
-            <p><%= @winner_user_donations_porcentage %>% </p>
+            <p><span class='glyphicon glyphicon-object-align-bottom'></span></p>
           </div>
-          <p>Porcentaje</p>
+          <p><%= @winner_user_donations_porcentage %>% Porcentaje</p>
         </div>
       </div>
     </div>
@@ -43,22 +43,22 @@
           <h3><%= winner.name %></h3>
         </div>
         <div class='col-md-4'>
-          <div class='s-circle'>
-            <p><%= winner.donations.length %></p>
+          <div class='s-circle xs'>
+            <p><span class='glyphicon glyphicon-heart'></span></p>
           </div>
-          <p>donaciones</p>
+          <p><%= winner.donations.length %> Donaciones</p>
         </div>
         <div class='col-md-4'>
-          <div class='s-circle'>
-            <p><%= winner.get_user_products %></p>
+          <div class='s-circle xs'>
+            <p><span class='glyphicon glyphicon-ok'></span></p>
           </div>
-          <p>Productos</p>
+          <p><%= winner.get_user_products %> Productos</p>
         </div>
         <div class='col-md-4'>
-          <div class='s-circle'>
-            <p><%= winner.donations.length * 100 / Donation.all.length %>%</p>
+          <div class='s-circle xs'>
+            <p><span class='glyphicon glyphicon-object-align-bottom'></p>
           </div>
-          <p>Porcentaje</p>
+          <p><%= winner.donations.length * 100 / Donation.all.length %>% Porcentaje</p>
         </div>
       </div>
     </div>

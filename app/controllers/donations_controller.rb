@@ -24,7 +24,7 @@ class DonationsController < ApplicationController
     @donation = @user.donor_donations.new(donation_params)
 
     if @donation.save
-      flash[:notice] = "Well done! Now you have to add the products."
+      flash[:notice] = "Muy bien! Ahora debes agregar alimentos."
       redirect_to action: 'new', controller: 'products' 
     else
       flash[:alert] = "You need to fill the camps"
@@ -36,18 +36,41 @@ class DonationsController < ApplicationController
     @donation = Donation.find(params[:id]) || render_404(params) 
     @products = @donation.products
     @donation_bank_id = @donation.bank_id
+    @donation_donor_id = @donation.donor_id
   end
 
   def update
-    @donation = Donation.find(params[:id]) || render_404(params) 
-    @user = current_user.id
-    @donation.update_attributes({ :bank_id => @user })
 
-      respond_to do |format|
-        format.js { }
-        format.html { redirect_to root_path, notice: 'no' }
+    if params[:donation_id]
+      @donation = Donation.find(params[:donation_id]) || render_404(params) 
+
+      @donation.update_attributes({ :bank_id => nil })
+
+      redirect_to donors_put_path(@donation), notice: 'Solicitud eliminada'
+
+    else
+      @donation = Donation.find(params[:id]) || render_404(params) 
+      @user = current_user.id
+      @nil = nil
+
+      @donation.update_attributes({ :bank_id => @user })
+
+        respond_to do |format|
+          format.js { }
+          format.html { redirect_to root_path, notice: 'no' }
+      end      
     end
 
+
+
+  end
+
+  def destroy
+    @donation = Donation.find(params[:id]) || render_404(params) 
+    @donation.destroy
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: 'Donación eliminada exitosamente' }
+    end   
   end
 
   private

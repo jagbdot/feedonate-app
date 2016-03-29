@@ -14,10 +14,25 @@ class User < ActiveRecord::Base
     self.type_of_user == "donor"
   end
 
+  def has_requests?
+    self.donor_donations.pluck(:bank_id).any? {|x| !x.nil?}
+  end
+
+  def get_notifications_number
+    self.donor_donations.where("bank_id IS NOT NULL").count
+  end
+
+  def get_user_name_notifications
+  result = ''
+  self.donations.where("bank_id IS NOT NULL").each do |donation|
+    result = donation.bank.name
+  end
+    result
+  end
+
   def get_user_products
     sum = 0
-    total = self.donations.each do |donation|
-      puts "Donaciones" + self.donations.length.to_s
+    total = self.donor_donations.each do |donation|
       sum += donation.products.length 
     end
     sum
@@ -39,7 +54,7 @@ class User < ActiveRecord::Base
     id = 0
     total = 0
     user_winner = 1
-    array_users = User.all.to_a
+    array_users = User.all.where(type_of_user: 'donor').to_a
 
     array_users.sort! do |user1, user2|
       user2.get_user_products <=> user1.get_user_products
@@ -51,7 +66,7 @@ class User < ActiveRecord::Base
     id = 0
     total = 0
     user_winner = 1
-    array_users = User.all.to_a
+    array_users = User.all.where(type_of_user: 'donor').to_a
 
     array_users.sort! do |user1, user2|
       user2.get_user_products <=> user1.get_user_products

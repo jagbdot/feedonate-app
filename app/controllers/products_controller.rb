@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
         # if the response format is javascript, do something in app/views/products/create.js.erb
         format.js { }
       end
-      flash[:notice] = "Donation created successfully."
+      flash[:notice] = "Donación registrada exitosamente."
   end
 
   private

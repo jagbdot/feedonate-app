@@ -2,7 +2,10 @@ class Donation < ActiveRecord::Base
   default_scope { order('created_at DESC') }
   belongs_to :bank, class_name: "User", foreign_key: "bank_id"
   belongs_to :donor, class_name: "User", foreign_key: "donor_id"
-  has_many :products
+  has_many :products, :dependent => :delete_all
+
+  validates :description, presence: true 
+  validates :description, length: {maximum: 30} 
 
   def user
     User.where("bank_id = ? OR donor_id = ?", self.id, self.id)

@@ -54,18 +54,14 @@ body{
   overflow: hidden;
   .back-img{
     position: absolute;
-    top: 120px;
+    top: -10%;
     z-index: -3;
-    width: 94%;
+    width: 100%;
     left: 0px;
     right: 0;
     margin-left: auto;
     margin-right: auto;
-  -webkit-filter: blur(0.9px);
-  -moz-filter: blur(0.8px);
-  -o-filter: blur(0.8px);
-  -ms-filter: blur(0.8px);
-  filter: blur(0.8px);
+
   }
   .triangle{
   position: absolute;
@@ -93,7 +89,7 @@ body{
   position: absolute;
   top: 0;
   height: 100%;
-  opacity: 0.78;
+  opacity: 0.8;
   background-color: #fff;
   width: 100%;
   z-index: -1;
@@ -155,15 +151,31 @@ body{
 
 p{
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 200;
   line-height: 26px;
+}
+
+h2.main-description{
+  padding-top: 12px !important;
+  margin-bottom: 0 !important;
+  width: 500px;
+  margin: 0 auto !important;
+  line-height: 35px;
+  font-weight: 200 !important;
+  font-size: 26px !important;
+  text-align: center;
+  text-shadow: 1px 1px #fff;
+}
+
+h1{
+  font-weight: 200;
 }
 
 h1.first-title {
   font-family: 'League Gothic';
   font-size: 100px;
   text-align: center;
-  text-shadow: 2px 2px #fff;
+  text-shadow: 1px 1px #fff;
   color: $blue-security-light;
   line-height: 80px;
   margin: 0;
@@ -179,10 +191,34 @@ h1.logo{
 }
 
 h1.single-page{
-  font-size: 38px;
-  font-weight: 100;
-  margin-bottom: 30px;
-  margin-top: 80px;
+  font-size: 44px;
+  font-weight: 400;
+  top: 65px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  text-shadow: 1px 1px #fff;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+}
+
+h2.single-page{
+  font-size: 22px !important;
+  font-weight: 300 !important;
+  top: 150px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  text-shadow: 1px 1px #fff;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+}
+
+h1.donation-title {
+  font-weight: 500 !important;
+  margin-top: 0px !important;
 }
 
 h2{
@@ -198,7 +234,7 @@ h2{
 h3{
   font-size: 22px !important;
   line-height: 28px !important;
-  font-weight: 500 !important;
+  font-weight: 300 !important;
   margin: 0 0 20px 0 !important;
 }
 
@@ -210,7 +246,7 @@ h3{
 
 .btn-do{
   font-family: 'Muli';
-  font-weight: 500;
+  font-weight: 300;
   text-transform: uppercase;
   padding: 10px 35px;
   border: 2px solid $blue-security;
@@ -219,13 +255,20 @@ h3{
   text-align: center;
   margin: 0 auto;
   display: table;
+  &.btn-disabled{
+    border: 1px solid rgba(106, 155, 195, 0.2);
+    color: rgba(106, 155, 195, 0.2);
+    &:hover{
+      color: rgba(106, 155, 195, 0.2);
+    }
+  }
   &.group{
     display: inline-table;
   }
   &:hover{
     text-decoration: none;
-    color: #65A8DC;
-    background-color: #fff;
+    color: #fff;
+    background-color: $blue-security-light;
   }
 }
 
@@ -236,7 +279,7 @@ h3{
 .image-logo{
   width: 155px;
   margin: 0 auto;
-  padding-bottom: 35px;
+  padding-bottom: 20px;
   img{
     width: 100%;
     opacity: 0.8;
@@ -249,7 +292,7 @@ hr.separator{
   margin: 35px auto;
   border-color: $blue-security-light;
   &.minor{
-    margin: 5px auto 35px;
+    margin: 25px auto 30px;
   }
 }
 
@@ -321,7 +364,7 @@ hr.separator{
   }
   h3{
     font-size: 28px !important;
-    font-weight: 700 !important;
+    font-weight: 500 !important;
     padding-bottom: 15px;
     width: auto;
     display: inline-block;
@@ -329,7 +372,7 @@ hr.separator{
   }
   h5{
     margin: 0;
-    font-weight: 500;
+    font-weight: 400;
     padding-bottom: 20px;
     span{
       //background-color: #46B48C; 
@@ -379,7 +422,7 @@ hr.separator{
   .overlay{
     height: 100%;
     width: 100%;
-    background-color: rgba(250, 251, 250, 0.92);
+    background-color: rgba(250, 251, 250, 0.9);
     z-index: 20;
     display: flex;
     align-items: center;
@@ -399,7 +442,7 @@ hr.separator{
       font-weight: 200;
       }
       p{
-      font-weight: 500;
+      font-weight: 400;
       text-shadow: 1px 1px #fff;
       font-size: 18px;
       line-height: 28px;
@@ -458,7 +501,8 @@ hr.separator{
     p{
       text-align: center;
       font-size: 16px;
-      margin-top: 5px;
+      font-weight: 400;
+      margin-top: 6px;
     }
     h3{
       text-align: center;
@@ -478,7 +522,7 @@ hr.separator{
     .s-circle{
       background-color: #fff;
       width: 60px;
-      border: 1px solid $blue-security;
+      border: 1px solid rgba(106, 155, 195, 1);
       border-radius: 100%;
       height: 60px;
       margin: 0 auto;
@@ -488,9 +532,17 @@ hr.separator{
       p{
         text-align: center;
         margin: 0;
-        font-size: 16px;
+        font-size: 26px;
         font-weight: 400;
         line-height: 18px;
+      }
+      &.xs{
+        width: 40px;
+        height: 40px; 
+        p{
+          font-size: 14px;
+          font-weight: 300;
+        }    
       }
     }
   }
@@ -514,6 +566,23 @@ hr.separator{
   margin-top: 85px;
 }
 
+.margin-for-head-image{
+  margin-top: 30px;
+}
+
+.margin-top-helper{
+  margin-top: 60px;
+}
+
 .bold-helper{
   font-weight: 700 !important;
+}
+
+.margin-notification{
+  margin-bottom: 10px;
+}
+
+.popover{
+  position: fixed !important;
+  box-shadow: 0 5px 10px rgba(106, 155, 195, 0.4) !important;
 }

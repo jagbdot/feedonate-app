@@ -1,5 +1,5 @@
-<h2>Log in</h2>
-
+<div class='container'>
+<div class='col-md-6 col-md-offset-3 margin-for-nav'>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -19,8 +19,10 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", :class => 'btn-do' %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+</div>
+</div>
+

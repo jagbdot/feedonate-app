@@ -1,4 +1,57 @@
-<h1>You rock, <%= current_user.name %>!</h1>
-<h4>This is your profile page</h4>
+<div class='container'>
+<div class='row margin-for-head-image'>
+  <h1 class='margin-helper divided margin-top-helper'>Tu perfil, <%= current_user.name %>!</h1>
+  <% if current_user.is_a_donor? %>
+    <div class='row'>
+      <% @donor_donation.each do |donation| %>
+          <div class='col-md-4 col-sm-4 col-xs-12'>
+            <div class='donor-box'>
+              <% if donation.description.present? %>
+              <div class='row'>
+                <div class='col-md-9 col-sm-9 col-xs-9'>
+                  <h6>Donante</h6>
+                  <h3><%= "#{donation.donor.name}" %></h3>
+                  <h5 class='donation-state'>Estado<span>Disponible</span></h5>
+                </div>
+                <div class='col-md-3 col-sm-3 col-xs-3'>
+                  <div class='donor-logo-container'><span class="glyphicon glyphicon-user"></span></div>
+                </div>
+              </div>
+                <div class='bottom'>
+                  <a href='/donations' class='btn-do'>Ver canasta</a>
+                </div>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class='row'>
+      <% @bank_donation.each do |donation| %>
+          <div class='col-md-4 col-sm-4 col-xs-12'>
+            <div class='donor-box'>
+              <% if donation.description.present? %>
+              <div class='row'>
+                <div class='col-md-9 col-sm-9 col-xs-9'>
+                  <h6>Donante</h6>
+                  <h3><%= "#{donation.donor.name}" %></h3>
+                  <h5 class='donation-state'>Estado<span>Disponible</span></h5>
+                </div>
+                <div class='col-md-3 col-sm-3 col-xs-3'>
+                  <div class='donor-logo-container'><span class="glyphicon glyphicon-user"></span></div>
+                </div>
+              </div>
+                <div class='bottom'>
+                  <a href='/donations' class='btn-do'>Ver canasta</a>
+                </div>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  <% end %>
+  </div>
+<hr class='separator minor'></hr>
 
-<%= link_to 'Back to index', root_path, method: 'GET', :class => 'btn btn-success' %>
+<%= link_to 'Volver a home', root_path, method: 'GET', :class => 'btn-do margin-helper' %>
+</div>

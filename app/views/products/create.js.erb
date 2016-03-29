@@ -1,3 +1,7 @@
-var html = "<li><%= @product.category %>: <%= @product.name %>(<%= @product.amount %>) </li>";
+var foodList = "<li><%= @product.category %>: <%= @product.name %>(<%= @product.amount %>) </li>";
+var confirm_button = "<a class='btn-do confirm' href='/''>Confirmar</a>"
 
-$('.products-list').append(html);
+$('.confirm').remove();
+$('.products-list').append(foodList);
+$('.btn-disabled').remove();
+$('#confirm-form').append(confirm_button);

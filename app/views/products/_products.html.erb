@@ -1,5 +1,5 @@
-<form>
-  <h2>Lista de productos</h2>
+<form id='confirm-form'>
+  <h2>Lista de alimentos</h2>
 <ol class='products-list'>
   Lista de alimentos
 <% @donation_products.each do |product| %>
@@ -8,6 +8,6 @@
   </li>
 <% end %>
 </ol>
-  <p>* Los productos aquí dispuestos serán registrados al presionar el botón de "confirmar" productos y serán de exclusiva privacidad.</p>
-  <%= link_to "Confirmar", root_path, :class => "btn-do" %>
+  <p class='margin-notification'>* Los productos aquí dispuestos serán registrados al presionar el botón de "confirmar" productos y serán de exclusiva privacidad.</p>
+  <a class='btn-do btn-disabled'>confirmar</a>
 </form>

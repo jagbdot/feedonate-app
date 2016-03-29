@@ -1,20 +1,23 @@
 10.times do |i|
-  user = User.new(
+  user = User.create(
     name: "Donante #{i}",
     password: 12345678,
     password_confirmation: 12345678,
     email: "#{i}@donanteprueba.com",
     type_of_user: "donor",
     )
-  user.save
-  donation = user.donor_donations.new(
-    description: "Donación #{i}",
+
+  donation = user.donor_donations.create(
+    description: "Donación #{i}"
     )
-  donation.save
-  product = donation.products.create(
-    name: "Producto #{i}",
-    )
-  product.save
+
+  10.times do |i|
+    product = donation.products.new(
+      name: "Producto #{i}",
+      amount: rand(10...42)
+      )
+    product.save
+  end
 end
 
 10.times do |index|

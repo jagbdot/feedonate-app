@@ -1,4 +1,13 @@
-var html = "<p>Donación Solicitada...</p>";
+var requested = "<a class='btn-do' href='/donations'>Donación Solicitada...</a>";
+var message = "<p class='margin-notification'>* Has solicitado esta donación!</p>";
+var state = "<span class='state-donation requested'>Donación solicitada</span>";
 
-$('.donation_request').remove();
-$('#new_request').append(html);
+$('.btn-do').remove();
+$('.state-donation').remove();
+
+$('.margin-notification').remove();
+$('#new_request').append(message);
+
+$('#new_request').append(requested);
+$('#donation-info').append(state);
+
