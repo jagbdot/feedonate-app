@@ -48,7 +48,7 @@
               <a href="/donations" class='btn-do'>Ver más donaciones</a>
               <% if current_user.id == @donation_bank_id %>
 
-<%= link_to "Eliminar solicitud", donors_put_path(@donation), :method=> :put %>
+              <%= link_to "Eliminar solicitud", donors_put_path(@donation), :method=> :put %>
        
               <% else %>          
               <% end %>

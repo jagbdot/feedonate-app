@@ -60,9 +60,6 @@ class DonationsController < ApplicationController
           format.html { redirect_to root_path, notice: 'no' }
       end      
     end
-
-
-
   end
 
   def destroy

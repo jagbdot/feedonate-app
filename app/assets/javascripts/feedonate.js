@@ -105,9 +105,6 @@ $(function () {
         // this line makes the response format JavaScript and not html.
         dataType: 'script',
 
-        success: function () {
-            
-        }
       });
     });
 });
