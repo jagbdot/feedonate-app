@@ -59,3 +59,23 @@ form{
     }
   }
 }
+
+@media only screen and (max-width : 480px) {
+  form {
+      padding: 30px 9px 60px;
+      margin-bottom: 15px;
+  }
+  .state-donation {
+      margin: 0px 0px 15px;
+  }
+  .margin-for-nav{
+    margin-top: 65px !important;
+  }
+  input[type=checkbox], input[type=radio] {
+      margin: 4px 0 0;
+      margin-top: 1px\9;
+      line-height: normal;
+      width: auto;
+      display: inline-block;
+  }
+}

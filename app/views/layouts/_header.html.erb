@@ -1,35 +1,43 @@
-<nav class="top_navbar aligner">
-  <div class='container'>
-    <div class='row'>
-      <div class='logo-section col-md-2 col-sm-2 aligner-item'>
+
+<nav class="top_navbar navbar navbar-default">
+  <div class="container h-100">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header aligner">
+      <div class='logo-section aligner-item m-w-100'>
         <a class='index-link' href="/">
         <img src="<%= asset_path('logo-feedonate-b.png') %>">
         <h1 class='logo'>Feedonate</h1>
         </a>
       </div>
-      <div class='nav-section col-md-7 col-sm-7 aligner-item'>
-        <nav>
-          <ul class='menu'>
-            <li><a href="/donations">Canastas</a></li>
-            <li><a href="/banks">Bancos de alimento</a></li>          
-            <li><a href="/donors">Donantes</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class='user-section col-md-4 col-sm-4 aligner-item'>
-      <% if user_signed_in? %>
-        <% if current_user.has_requests? %>
-          <span type="button" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Tienes donaciones solicitadas de: <%= current_user.get_user_name_notifications %>" class='notification'><%= current_user.get_notifications_number %></span>
-        <% else %>
-        <span>0</span>
-      <% end %>
-        <a href='/profile'><%= current_user.name %></a>
-        <%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %>
-      <% else %>
-        <a class="signup" data-toggle="modal" data-target="#sign-modal" href="#">Regístrate</a>
-        <a class="signin" data-toggle="modal" data-target="#sign-modal" href="#">Inicia sesión</a>
-      <% end %>
-      </div>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </div>
-  </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/donations">Canastas</a></li>
+        <li><a href="/banks">Bancos de alimento</a></li>          
+        <li><a href="/donors">Donantes</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <% if current_user.has_requests? %>
+            <span type="button" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Tienes donaciones solicitadas de: <%= current_user.get_user_name_notifications %>" class='notification'><%= current_user.get_notifications_number %></span>
+          <% else %>
+          <span>0</span>
+        <% end %>
+          <li><a href='/profile'><%= current_user.name %></a></li>
+          <li><%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %></li>
+        <% else %>
+          <li><a class="signup" data-toggle="modal" data-target="#sign-modal" href="#">Regístrate</a></li>
+          <li><a class="signin" data-toggle="modal" data-target="#sign-modal" href="#">Inicia sesión</a></li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>

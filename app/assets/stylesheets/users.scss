@@ -4,9 +4,34 @@
 @import "variables";
 
 /* Medium Devices, Desktops */
-@media only screen and (min-width : 992px) {
+@media only screen and (min-width : 1085px) {
   .container{
     width: 1085px !important;
+  }
+}
+
+@media only screen and (max-width : 992px) {
+  .container{
+    width: 870px !important;
+  }
+}
+
+@media only screen and (max-width : 870px) {
+  .container{
+    width: 80% !important;
+    .w-100, &.h-100{
+      width: 100% !important;
+    }
+
+  }
+}
+
+@media only screen and (max-width : 480px) {
+  .container{
+    width: 100% !important;
+    .w-100{
+      width: 33.33333333%;
+    }
   }
 }
 
@@ -30,18 +55,21 @@
   background-color: #f2ab4c;
   padding: 5px 10px;
   color: #fff;
+  top: 10px;
+  float: left;
   cursor: pointer;
+  position: relative;
   border-radius: 3px;
 }
 
 .top_navbar{
-  background-color: $blue-security;
-  position: fixed;
+  background-color: $blue-security !important;
+  position: fixed !important;
   z-index: 10;
   width: 100%;
   height: 55px;
   a{
-    color: #fff;
+    color: #fff !important;
     padding: 0 15px;
     font-size: $font-size-links;
   }

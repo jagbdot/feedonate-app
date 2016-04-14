@@ -1,5 +1,5 @@
 <div class='back-image'>
-  <div class='overlay'></div>
+<div class='overlay'></div>
 <div class='container'>
   <div class='margin-for-nav'>
     <div class="row">
@@ -15,7 +15,7 @@
       </div>
       <div class='col-md-8'>
         <% if @products.any? %>
-        <form id="new_request" action="/donations/<%= @donation.id %>" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="6bHg9h10h5Vigv7hquw4fDgojW6ybzjhtcmivoW1sJP/gRb4FEBZN+jx5cmGaK0HC0olegFZhgVO775OMhx4dw==">
+        <form id="new_request" action="/donations/<%= @donation.id %>" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden">
           <h2>Lista de alimentos</h2>
           <ol>
           <% @products.each do |product| %>
@@ -63,6 +63,7 @@
           <div class='link-group'>
             <a data-toggle="modal" data-target="#sign-modal" href="#" class='signup btn-do group'>Regístrate</a>
             <a data-toggle="modal" data-target="#sign-modal" href="#" class='signin btn-do group'>Inicia sesión</a>
+            
           </div>
         <% end %>
       </div>

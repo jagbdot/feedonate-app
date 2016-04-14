@@ -16,7 +16,7 @@
   color: $blue-security-light;
   top: 10px;
   text-shadow: 3px -3px #fff;
-  }
+}
 
 .glyphicon-user:before{
   font-size: 20px;
@@ -46,6 +46,16 @@ body{
   color: $blue-security !important;
 }
 
+.navbar-header{
+  height: 100%;
+  margin-right: 15px !important;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: none;
+    background-color: $blue-security;
+}
+
 .background{
   width: 100%;
   height: 95vh;
@@ -56,12 +66,11 @@ body{
     position: absolute;
     top: -10%;
     z-index: -3;
-    width: 100%;
+    width: 110%;
     left: 0px;
     right: 0;
     margin-left: auto;
     margin-right: auto;
-
   }
   .triangle{
   position: absolute;
@@ -113,6 +122,7 @@ body{
   background-color: #fff;
   position: relative;
   padding: 15px 20px;
+  margin-bottom: 30px;
   box-shadow: 3px 3px 0px rgba(106, 155, 195, 0.4);
   .circle{
     border-radius: 100%;
@@ -306,6 +316,7 @@ hr.separator{
 .donor-box{
   width: 100%;
   height: 250px;
+  margin-bottom: 30px !important;
   margin: 0 auto;
   background-color: #FFF; 
   color: $blue-security;
@@ -582,7 +593,256 @@ hr.separator{
   margin-bottom: 10px;
 }
 
+.h-100{
+  height: 100%;
+}
+
+.m-w-100{
+  max-width: 100%;
+}
+
 .popover{
   position: fixed !important;
   box-shadow: 0 5px 10px rgba(106, 155, 195, 0.4) !important;
+}
+
+@media only screen and (max-width : 992px) {
+  .background{
+    height: 90vh;
+    .back-img{
+      position: absolute;
+      top: -10%;
+      z-index: -3;
+      width: 140%;
+      left: 0px;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+@media only screen and (max-width : 820px) {
+  .background{
+    height: 630px;
+    .back-img{
+      top: -10%;
+      width: 220%;
+    }
+  }
+  h2.main-description{
+    font-size: 22px !important;
+    line-height: 27px;
+    width: auto;
+  }
+  .aligner-item {
+      max-width: 65%;
+  }
+  .navbar-header{
+    height: 100%;
+    margin-right: 0px !important;
+  }
+  .navbar-default .navbar-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0px;
+    &:hover{
+      background-color: $blue-security !important;
+    }
+  }
+  .navbar-right{
+    border-top: 1px solid #ccc;
+  }
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff !important;
+  }
+  .top_navbar a {
+      color: #FFF !important;
+      padding: 0px 15px;
+      font-size: 14px;
+  }
+  .navbar-header {
+      height: 100%;
+      margin-right: 0px !important;
+      width: 145px;
+  }
+.frame-for-circle .ranking-major-box {
+    height: 245px;
+    bottom: 55px;
+  }
+.data .overlay .data-box p {
+    width: 100%;
+  }
+.data .overlay .data-box h1 {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width : 480px) {
+  .background{
+    height: 475px;
+    margin-bottom: 45px;
+    .back-img{
+      top: 0%;
+      width: 230%;
+    }
+  }
+  h1.first-title {
+    font-family: 'League Gothic';
+    font-size: 65px;
+    text-align: center;
+    text-shadow: 1px 1px #fff;
+    color: $blue-security-light;
+    line-height: 50px;
+    margin: 0;
+  }
+  h2.main-description{
+    font-size: 18px !important;
+    line-height: 25px;
+  }
+  .aligner-item {
+      max-width: 95%;
+  }
+  .image-logo{
+    width: 110px;
+    margin: 0 auto;
+    padding-bottom: 15px;
+  }
+  .btn-do{
+    font-family: 'Muli';
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    border: 2px solid $blue-security;
+    color: $blue-security;
+    font-size: 14px;
+    text-align: center;
+    margin: 0 auto;
+    display: table;
+  }
+  h2{
+    font-size: 29px !important;
+    font-weight: 100 !important;
+    margin: 0 0 30px !important;
+    text-shadow: 1px 1px #fff;
+    &.center{
+      text-align: center
+    }
+  }
+
+  h3{
+    font-size: 17px !important;
+    line-height: 23px !important;
+    font-weight: 300 !important;
+    margin: 0 0 20px 0 !important;
+  }
+  p{
+    font-size: 14px;
+    line-height: 23px;
+  }
+  .white-text-box{
+    background-color: #fff;
+    position: relative;
+    padding: 15px 20px;
+    box-shadow: 3px 3px 0px rgba(106, 155, 195, 0.4);
+    margin-bottom: 30px;
+  }
+  .presentation-white-back{
+    box-shadow: 0px -12px 0px rgba(106, 155, 195, 0.4) inset;
+  }
+  hr.separator.minor {
+    margin: 20px auto 25px;
+  }
+  .background .triangle.back {
+    border-bottom: 40px solid rgba(106, 155, 195, 0.4);
+  }
+  .background .triangle {
+    border-width: 35px;
+  }
+  .glyphicon-signal:before, .glyphicon-pencil:before, .glyphicon-list-alt:before {
+    font-size: 75px;
+  }
+  .icon-box {
+    margin: 0px auto 10px;
+  }
+  .donor-box {
+    margin-bottom: 30px;
+  }
+  .data .overlay .data-box h1 {
+    padding-bottom: 25px;
+    width: 95%;
+    line-height: 33px;
+    font-size: 25px;
+  }
+  .data .overlay .data-box p {
+    font-size: 14px;
+    line-height: 24px;
+    width: 90%;
+    margin-bottom: 30px;
+  }
+  .donor-box h3 {
+    font-size: 24px !important;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #6A9BC3;
+    font-weight: 400 !important;
+  }
+  .donor-box h5 {
+    padding-bottom: 10px;
+    font-size: 12px;
+  }
+  .donor-box .btn-do {
+      padding: 12px 26px;
+  }
+  hr.separator {
+    width: 130px;
+    margin: 0px auto 30px;
+  }
+  .data {
+    height: 440px;
+    margin-bottom: 30px;
+    background-position: 51% 94%;
+    background-size: 200% auto;
+    margin-top: 30px;
+  }
+  .glyphicon-king:before{
+    font-size: 50px;
+  }
+  .frame-for-circle .ranking-major-box p {
+    font-size: 14px;
+  }
+  .glyphicon-star{
+    font-size: 20px;
+  }
+  .frame-for-circle .ranking-major-box {
+    height: auto;
+    bottom: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 0px;
+  }
+  .frame-for-circle.with-minor-circle {
+    height: 260px;
+  }
+  .frame-for-circle {
+    height: 360px;
+  }
+  .frame-for-circle .ranking-major-box .head-box {
+    margin-bottom: 0;
+  }
+    .s-circle{
+      &.xs{
+        width: 40px;
+        height: 40px; 
+        p{
+          font-size: 12px;
+          font-weight: 300;
+        }    
+      }
+    }
+  .frame-for-circle .ranking-major-box p {
+      font-size: 12px;
+  }
+  footer{
+    margin-top: 30px;
+  }
 }

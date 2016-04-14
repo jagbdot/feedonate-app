@@ -54,3 +54,19 @@ span.donor{
     height: 100%;
   }
 }
+
+@media only screen and (max-width : 480px) {
+  .head-image img{
+    width: 120%;
+  }
+  form ol li {
+    font-size: 14px !important;
+  }
+  form {
+      padding: 30px 9px 45px !important;
+      margin-bottom: 0px !important;
+  }
+  h2.single-page{
+    line-height: 30px;
+  }
+}
