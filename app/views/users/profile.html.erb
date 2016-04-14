@@ -1,6 +1,10 @@
 <div class='container'>
 <div class='row margin-for-head-image'>
-  <h1 class='margin-helper divided margin-top-helper'>Tu perfil, <%= current_user.name %>!</h1>
+  <% if current_user.is_a_donor? %>
+  <h1 class='margin-helper divided margin-top-helper'>Hola <%= current_user.name %>, estas son tus donaciones realizadas</h1>
+  <% else %>
+  <h1 class='margin-helper divided margin-top-helper'>Hola <%= current_user.name %>, estas son tus donaciones solicitadas</h1>
+  <% end %>
   <% if current_user.is_a_donor? %>
     <div class='row'>
       <% @donor_donation.each do |donation| %>

@@ -60,6 +60,18 @@ form{
   }
 }
 
+@media only screen and (max-width : 992px) {
+  .state-donation {
+      margin: 0px 0px 15px;
+  }
+}
+
+@media only screen and (max-width : 820px) {
+  .state-donation {
+      margin: 0px 0px 15px;
+  }
+}
+
 @media only screen and (max-width : 480px) {
   form {
       padding: 30px 9px 60px;

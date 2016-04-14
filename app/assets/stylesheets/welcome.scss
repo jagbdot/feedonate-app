@@ -122,7 +122,7 @@ body{
   background-color: #fff;
   position: relative;
   padding: 15px 20px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
   box-shadow: 3px 3px 0px rgba(106, 155, 195, 0.4);
   .circle{
     border-radius: 100%;
@@ -630,6 +630,9 @@ hr.separator{
       width: 220%;
     }
   }
+  .white-text-box{
+    margin-bottom: 30px;
+  }
   h2.main-description{
     font-size: 22px !important;
     line-height: 27px;
@@ -676,6 +679,9 @@ hr.separator{
   }
 .data .overlay .data-box h1 {
     width: 100%;
+  }
+  .ranking-major-box {
+    margin-bottom: 30px;
   }
 }
 
@@ -730,6 +736,14 @@ hr.separator{
       text-align: center
     }
   }
+
+h1.single-page{
+  font-size: 36px;
+}
+
+h2.single-page{
+  font-size: 22px !important;
+}
 
   h3{
     font-size: 17px !important;
