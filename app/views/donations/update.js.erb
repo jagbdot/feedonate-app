@@ -1,4 +1,5 @@
-var requested = "<a class='btn-do' href='/donations'>Donación Solicitada...</a>";
+var requested = "<a class='btn-do btn-disabled' href='/donations'>Donación Solicitada...</a>";
+var eliminate = "<div class='row'><div class='col-md-12'><a class='btn-do' rel='nofollow' data-method='put' href='/donations/120'>Eliminar solicitud</a></div></div>";
 var message = "<p class='margin-notification'>* Has solicitado esta donación!</p>";
 var state = "<span class='state-donation requested'>Donación solicitada</span>";
 
@@ -9,5 +10,6 @@ $('.margin-notification').remove();
 $('#new_request').append(message);
 
 $('#new_request').append(requested);
+$('#new_request').append(eliminate);
 $('#donation-info').append(state);
 

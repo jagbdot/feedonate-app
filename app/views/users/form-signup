@@ -46,6 +46,6 @@
   </div>
 
   <div class="actions">
-    <input type="submit" name="commit" value="Sign up">
+    <input class='btn-do' type="submit" name="commit" value="Sign up">
   </div>
 </form>

@@ -606,6 +606,26 @@ hr.separator{
   box-shadow: 0 5px 10px rgba(106, 155, 195, 0.4) !important;
 }
 
+.none{
+  display: none !important;
+}
+
+.modal-body{
+  padding: 0px !important;
+  form{
+    margin-bottom: 0px !important;
+  }
+}
+
+.modal-content{
+  border-radius: 0px !important;
+}
+
+.modal-header {
+    padding: 15px 30px !important;
+    border-bottom: 0px !important;
+}
+
 @media only screen and (max-width : 992px) {
   .background{
     height: 90vh;
@@ -644,6 +664,9 @@ hr.separator{
   .navbar-header{
     height: 100%;
     margin-right: 0px !important;
+  }
+  .navbar-toggle {
+    background-color: $blue-security !important;
   }
   .navbar-default .navbar-toggle {
     position: absolute;
